@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "30b44337-49e8-4c7c-a7c2-cf28e16a167f",
+		"name": "Spring Ai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18942271"
+	},
+	"item": [
+		{
+			"name": "Generate Reciepe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/generate-recipe?ingredients=Olives, Potatoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"generate-recipe"
+					],
+					"query": [
+						{
+							"key": "ingredients",
+							"value": "Olives, Potatoes"
+						},
+						{
+							"key": "cuisine",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "dietaryRestrictions",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/generate-image?prompt=A light cream colored mini golden doodle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"generate-image"
+					],
+					"query": [
+						{
+							"key": "prompt",
+							"value": "A light cream colored mini golden doodle"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transcription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "audio",
+							"type": "file",
+							"src": "/home/ahmed/Downloads/transcribing.mp3"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/convert/audio-to-text",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"audio-to-text"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate image with options",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/generate-image/options?prompt=A light cream colored mini golden doodle&n=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"generate-image",
+						"options"
+					],
+					"query": [
+						{
+							"key": "prompt",
+							"value": "A light cream colored mini golden doodle"
+						},
+						{
+							"key": "n",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat with deepseek",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ask-ai?prompt=what's up?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ask-ai"
+					],
+					"query": [
+						{
+							"key": "prompt",
+							"value": "what's up?"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat with deepseek using options",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ask-ai/options?prompt=what's up?&temperature=1&maxTokens=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ask-ai",
+						"options"
+					],
+					"query": [
+						{
+							"key": "prompt",
+							"value": "what's up?"
+						},
+						{
+							"key": "temperature",
+							"value": "1"
+						},
+						{
+							"key": "maxTokens",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
